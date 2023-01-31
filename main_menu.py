@@ -38,8 +38,8 @@ def main_menu():
         MENU_TEXT = get_font(100).render("OTHELLO", True, "#b68f40")
         MENU_RECT = MENU_TEXT.get_rect(center=(525, 100))
 
-        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(510, 250), 
-                            text_input="AI", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
+        # PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(510, 250), 
+        #                     text_input="AI", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
         OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(510, 370), 
                             text_input="AI-Pruning", font=get_font(50), base_color="#d7fcd4", hovering_color="White")
         OPTIONS_BUTTON2 = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(510, 490), 
@@ -49,7 +49,7 @@ def main_menu():
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
-        for button in [PLAY_BUTTON, OPTIONS_BUTTON, OPTIONS_BUTTON2, QUIT_BUTTON]:
+        for button in [OPTIONS_BUTTON, OPTIONS_BUTTON2, QUIT_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
             button.update(SCREEN)
         
@@ -58,8 +58,8 @@ def main_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    othello_AI()
+                """ if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    othello_AI() """
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                     othello_AI_Pruning()
                 if OPTIONS_BUTTON2.checkForInput(MENU_MOUSE_POS):
